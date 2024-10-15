@@ -1,1 +1,3 @@
 ![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/amymillar/SEMcoursework/main.yml?branch=main)
+[![LICENSE](https://img.shields.io/github/license/amymillar/SEMcoursework.svg?style=flat-square)](https://github.com/amymillar/SEMcoursework/blob/main/LICENSE)
+[![Releases](https://img.shields.io/github/release/amymilar/SEMcoursework/all.svg?style=flat-square)](https://github.com/amymillar/SEMcoursework/releases)
