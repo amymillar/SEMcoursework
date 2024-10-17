@@ -1,5 +1,5 @@
 FROM openjdk:latest
-COPY ./target/SEMcoursework-0.1.0.2-jar-with-dependencies.jar /app/SEMcoursework.jar
+COPY ./target/SEMcoursework-0.1.0.2-jar-with-dependencies.jar /tmp
 WORKDIR /tmp
-ENTRYPOINT ["java", "-jar", "/app/SEMcoursework.jar"]
+ENTRYPOINT ["java", "-jar", "SEMcoursework-0.1.0.2-jar-with-dependencies.jar"]
 
