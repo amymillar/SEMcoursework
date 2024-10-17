@@ -22,7 +22,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.napier.semcoursework.App</mainClass>
+                            <mainClass>com.napier.semCoursework.App</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
