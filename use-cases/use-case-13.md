@@ -28,7 +28,7 @@ No report is produced.
 
 ### Primary Actor
 
-*a role name for the primary actor, or description*
+*a role name for the primary actor, or description
 
 ### Trigger
 

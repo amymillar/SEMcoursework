@@ -36,7 +36,7 @@ No report is produced.
 
 ## MAIN SUCCESS SCENARIO
 
-*put here the steps of the scenario from trigger to goal delivery, and any cleanup after*
+*put here the steps of the scenario from trigger to goal delivery, and any cleanup after
 
 1. action description
 

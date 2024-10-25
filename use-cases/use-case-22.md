@@ -32,7 +32,7 @@ No report is produced.
 
 ### Trigger
 
-*the action upon the system that starts the use case, may be a time event*
+*the action upon the system that starts the use case, may be a time event
 
 ## MAIN SUCCESS SCENARIO
 

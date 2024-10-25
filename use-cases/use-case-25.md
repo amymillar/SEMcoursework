@@ -44,7 +44,7 @@ No report is produced.
 
 *put here the extensions, one at a time, each referring to the step of the main scenario*
 
-1. **Condition**: action of sub use case
+1. **Condition*: action of sub use case
 
 ## SUB-VARIATIONS
 
