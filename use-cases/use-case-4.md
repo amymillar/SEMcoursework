@@ -12,7 +12,7 @@ As a *population analyst* *I want to see the top N populated countries in a regi
 
 ### Level
 
-Primary task.
+Primary task
 
 ### Preconditions
 

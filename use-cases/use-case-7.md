@@ -8,7 +8,7 @@ As an urban planner I want to see the cities in a region organised by largest po
 
 ### Scope
 
-*what system is considered black-box under design*
+*what system is considered black-box under design
 
 ### Level
 

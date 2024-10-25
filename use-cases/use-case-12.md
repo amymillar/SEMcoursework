@@ -19,7 +19,7 @@ Primary task.
 
 ### Success End Condition
 
-*the state of the world upon successful completion*
+*the state of the world upon successful completion
 
 ### Failed End Condition
 

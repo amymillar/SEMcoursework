@@ -24,7 +24,7 @@ Primary task.
 
 ### Failed End Condition
 
-No report is produced.
+No report is produced
 
 ### Primary Actor
 

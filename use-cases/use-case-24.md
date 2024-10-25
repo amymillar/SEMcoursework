@@ -8,7 +8,7 @@ As a development advisor I want to see the population living in cities, and peop
 
 ### Scope
 
-*what system is considered black-box under design*
+*what system is considered black-box under design
 
 ### Level
 

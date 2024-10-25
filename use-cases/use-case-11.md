@@ -8,7 +8,7 @@ As an urban planner I want to see the top N populated cities in a country where 
 
 ### Scope
 
-*what system is considered black-box under design*
+*what system is considered black-box under design
 
 ### Level
 
