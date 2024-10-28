@@ -52,6 +52,4 @@ None.
 
 ## SCHEDULE
 
-**DUE DATE**: *date or release of deployment*
-
-*any other schedule/staffing information you need*
+**DUE DATE**: 5/02/2024 - Final code review

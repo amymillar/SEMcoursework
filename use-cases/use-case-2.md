@@ -20,7 +20,7 @@ Primary task.
 
 ### Success End Condition
 
-*the state of the world upon successful completion*
+A report is available for analysts to study population sizes.
 
 ### Failed End Condition
 
@@ -52,4 +52,4 @@ None.
 
 ## SCHEDULE
 
-**DUE DATE**: *date or release of deployment*
+**DUE DATE**: 5/02/2024 - Final code review
