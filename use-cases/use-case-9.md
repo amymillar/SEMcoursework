@@ -8,7 +8,7 @@ As an urban planner I want to see the cities in the world organised by largest p
 
 ### Scope
 
-*what system is considered black-box under design
+*what system is considered black-box under design8
 
 ### Level
 
@@ -16,7 +16,7 @@ Primary task.
 
 ### Preconditions
 
-*what we expect is already the state of the world
+*what we expect is already the state of the world*
 
 ### Success End Condition
 

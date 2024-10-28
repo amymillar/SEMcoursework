@@ -15,11 +15,11 @@ Primary task.
 
 ### Preconditions
 
-*what we expect is already the state of the world
+*what we expect is already the state of the world*
 
 ### Success End Condition
 
-*the state of the world upon successful completion
+*the state of the world upon successful completion*
 
 ### Failed End Condition
 
@@ -47,7 +47,7 @@ No report is produced.
 
 ## SUB-VARIATIONS
 
-*put here the sub-variations that will cause eventual branching in the scenario
+*put here the sub-variations that will cause eventual branching in the scenario*
 
 1. list of sub-variations
 

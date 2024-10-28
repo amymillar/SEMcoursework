@@ -8,7 +8,7 @@ As a population analyst I want to see all the countries in a region organised by
 
 ### Scope
 
-*what system is considered black-box under design
+*what system is considered black-box under design*
 
 ### Level
 
@@ -16,7 +16,7 @@ Primary task.
 
 ### Preconditions
 
-*what we expect is already the state of the world
+*what we expect is already the state of the world*
 
 ### Success End Condition
 

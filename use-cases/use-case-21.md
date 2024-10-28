@@ -20,7 +20,7 @@ Primary task.
 
 ### Success End Condition
 
-*the state of the world upon successful completion
+*the state of the world upon successful completion*
 
 ### Failed End Condition
 
@@ -36,7 +36,7 @@ No report is produced.
 
 ## MAIN SUCCESS SCENARIO
 
-*put here the steps of the scenario from trigger to goal delivery, and any cleanup after
+*put here the steps of the scenario from trigger to goal delivery, and any cleanup after*
 
 1. action description
 
@@ -48,7 +48,7 @@ No report is produced.
 
 ## SUB-VARIATIONS
 
-*put here the sub-variations that will cause eventual branching in the scenario
+*put here the sub-variations that will cause eventual branching in the scenario*
 
 1. list of sub-variations
 

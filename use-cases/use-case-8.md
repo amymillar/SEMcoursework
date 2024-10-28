@@ -16,11 +16,11 @@ Primary task.
 
 ### Preconditions
 
-*what we expect is already the state of the world
+*what we expect is already the state of the world*
 
 ### Success End Condition
 
-*the state of the world upon successful completion
+*the state of the world upon successful completion*
 
 ### Failed End Condition
 

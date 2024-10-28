@@ -16,7 +16,7 @@ Primary task
 
 ### Preconditions
 
-*what we expect is already the state of the world
+*what we expect is already the state of the world*
 
 ### Success End Condition
 

@@ -16,7 +16,7 @@ Primary task.
 
 ### Preconditions
 
-*what we expect is already the state of the world
+*what we expect is already the state of the world*
 
 ### Success End Condition
 
@@ -44,11 +44,11 @@ No report is produced.
 
 *put here the extensions, one at a time, each referring to the step of the main scenario*
 
-1. **Condition*: action of sub use case
+1. **Condition**: action of sub use case
 
 ## SUB-VARIATIONS
 
-*put here the sub-variations that will cause eventual branching in the scenario
+*put here the sub-variations that will cause eventual branching in the scenario*
 
 1. list of sub-variations
 
