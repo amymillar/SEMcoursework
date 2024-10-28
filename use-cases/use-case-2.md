@@ -8,7 +8,7 @@ As a population analyst I want to see all the countries in a region organised by
 
 ### Scope
 
-*what system is considered black-box under design*
+Organisation
 
 ### Level
 
@@ -16,7 +16,7 @@ Primary task.
 
 ### Preconditions
 
-*what we expect is already the state of the world*
+Database contains up-to-date population data for the region.
 
 ### Success End Condition
 
@@ -28,17 +28,19 @@ No report is produced.
 
 ### Primary Actor
 
-*a role name for the primary actor, or description*
+Population analysts
 
 ### Trigger
 
-*the action upon the system that starts the use case, may be a time event*
+Analyst requests population information about the region.
 
 ## MAIN SUCCESS SCENARIO
 
-*put here the steps of the scenario from trigger to goal delivery, and any cleanup after*
-
-1. action description
+1. Analyst request the information for the worlds population.
+2. System accesses the world database.
+3. System accesses regions data.
+4. System sorts regions populations in descending order.
+5. System provides a generated report to analyst.
 
 ## EXTENSIONS
 
