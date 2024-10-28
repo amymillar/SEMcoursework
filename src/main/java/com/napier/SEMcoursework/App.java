@@ -1,4 +1,4 @@
-package com.napier.SEMcoursework;
+package com.napier.semCoursework;
 
 public class App
 {
