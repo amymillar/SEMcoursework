@@ -8,7 +8,7 @@ As a population analyst I want to see all the countries in a continent organised
 
 ### Scope
 
-*what system is considered black-box under design*
+Organisation
 
 ### Level
 
