@@ -44,9 +44,7 @@ Analyst requests population information about the region.
 
 ## EXTENSIONS
 
-*put here the extensions, one at a time, each referring to the step of the main scenario*
-
-1. **Condition**: action of sub use case
+None.
 
 ## SUB-VARIATIONS
 
