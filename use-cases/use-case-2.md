@@ -32,7 +32,7 @@ Population Analyst
 
 ### Trigger
 
-Analyst requests population information about the world.
+Analyst requests population information about the countries in a region.
 
 ## MAIN SUCCESS SCENARIO
 
