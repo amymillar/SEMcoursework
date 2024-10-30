@@ -8,7 +8,7 @@ As a development advisor I want to see the population living in cities, and peop
 
 ### Scope
 
-*what system is considered black-box under design*
+Organisation
 
 ### Level
 
@@ -16,11 +16,11 @@ Primary task.
 
 ### Preconditions
 
-*what we expect is already the state of the world*
+Database contains up-to-date population data for the world.
 
 ### Success End Condition
 
-*the state of the world upon successful completion*
+A report is available for development advisor to study population data.
 
 ### Failed End Condition
 
@@ -28,29 +28,27 @@ No report is produced.
 
 ### Primary Actor
 
-*a role name for the primary actor, or description*
+Development Advisor
 
 ### Trigger
 
-*the action upon the system that starts the use case, may be a time event*
+Development advisor requests database to produce a report on populations of people, people living in and not living in cities in a country.
 
 ## MAIN SUCCESS SCENARIO
 
-*put here the steps of the scenario from trigger to goal delivery, and any cleanup after*
-
-1. action description
+1. Development advisor requests report on populations of people in a country.
+2. System captures country name.
+3. System extracts populations of people, people living in and out of cities in country.
+4. System produces report.
 
 ## EXTENSIONS
 
-*put here the extensions, one at a time, each referring to the step of the main scenario*
-
-1. **Condition**: action of sub use case
+3. **Continent doesnt exist:**
+   i. System informs development advisor continent doesnt exist.
 
 ## SUB-VARIATIONS
 
-*put here the sub-variations that will cause eventual branching in the scenario*
-
-1. list of sub-variations
+None.
 
 ## SCHEDULE
 
