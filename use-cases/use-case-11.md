@@ -8,7 +8,7 @@ As an urban planner I want to see the top N populated cities in a country where 
 
 ### Scope
 
-*what system is considered black-box under design*
+Organistaion
 
 ### Level
 
@@ -16,11 +16,11 @@ Primary task.
 
 ### Preconditions
 
-*what we expect is already the state of the world*
+Database contains up-to-date population data for the country.
 
 ### Success End Condition
 
-*the state of the world upon successful completion*
+A report is available for planner to study population data.
 
 ### Failed End Condition
 
@@ -28,29 +28,26 @@ No report is produced.
 
 ### Primary Actor
 
-*a role name for the primary actor, or description*
+Urban PLanner
 
 ### Trigger
 
-*the action upon the system that starts the use case, may be a time event*
+User inputs N value
 
 ## MAIN SUCCESS SCENARIO
 
-*put here the steps of the scenario from trigger to goal delivery, and any cleanup after*
-
-1. action description
+1. Analyst requests info on top N populated cities in country.
+2. System accesses world database.
+3. System sorts through results and produces data on top N populated cities.
+4. System provides generated report.
 
 ## EXTENSIONS
 
-*put here the extensions, one at a time, each referring to the step of the main scenario*
-
-1. **Condition**: action of sub use case
+None.
 
 ## SUB-VARIATIONS
 
-*put here the sub-variations that will cause eventual branching in the scenario*
-
-1. list of sub-variations
+None.
 
 ## SCHEDULE
 
