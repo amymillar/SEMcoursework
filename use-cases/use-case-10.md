@@ -36,7 +36,7 @@ Urban Planner requests population data on all district cities.
 
 ## MAIN SUCCESS SCENARIO
 
-1. Analyst request the information for population per city in a country.
+1. Analyst request the information for population per city in a district.
 2. System accesses world database.
 3. System sorts the districts populations in descending order by city.
 4. System provides a generated report to analyst.
