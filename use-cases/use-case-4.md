@@ -38,7 +38,7 @@ Analyst inputs N value
 
 1. Analyst requests info on top N countries in region.
 2. System accesses world database.
-3. System sorts through results and produces data on top N populated countries.
+3. System sorts through results and produces data on top N populated countries in region.
 4. System provides generated report to analyst.
 
 ## EXTENSIONS
