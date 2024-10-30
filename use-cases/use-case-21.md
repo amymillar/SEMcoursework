@@ -1,10 +1,10 @@
-# USE CASE: 21 Produce a report with the top N populated cities in a continent where N is provided by the user.
+# USE CASE: 21 Produce a report with the top N populated capital cities in a continent where N is provided by the user.
 
 ## CHARACTERISTIC INFORMATION
 
 ### Goal in Context
 
-As an urban planner I want to see the top N populated cities in a continent where N is provided by the user to help my planning on specific continents capital cities.
+As an urban planner I want to see the top N populated capital cities in a continent where N is provided by the user to help my planning on specific continents capital cities.
 
 ### Scope
 
@@ -36,9 +36,9 @@ Urban Planner enters N value.
 
 ## MAIN SUCCESS SCENARIO
 
-1. Urban Planner requests info on top N populated cities in a continent.
+1. Urban Planner requests info on top N populated capital cities in a continent.
 2. System accesses world database.
-3. System sorts through results and produces data on top N populated cities.
+3. System sorts through results and produces data on top N populated capital cities.
 4. System provides generated report.
 
 
