@@ -37,8 +37,8 @@ Urban Planner requests population data on countries cities.
 ## MAIN SUCCESS SCENARIO
 
 1. Analyst request the information for population per city in a country.
-2. System accesses regions data from world database.
-3. System sorts the regions populations in descending order by city.
+2. System accesses countries data from world database.
+3. System sorts the countries populations in descending order by city.
 4. System provides a generated report to analyst.
 
 ## EXTENSIONS
