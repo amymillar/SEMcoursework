@@ -32,11 +32,11 @@ Urban Planner
 
 ### Trigger
 
-Urban Planner requests info on top N populated capital cities in world.
+Urban Planner inputs N value.
 
 ## MAIN SUCCESS SCENARIO
 
-1. Urban Planner inputs N value
+1. Urban Planner requests info on top N populated capital cities in world.
 2. System accesses world database.
 3. System sorts through results and produces data on top N populated capital cities.
 4. System provides generated report.
