@@ -8,7 +8,7 @@ As a population analyst I want to see all the countries in the world organised b
 
 ### Scope
 
-*what system is considered black-box under design*
+Organisation
 
 ### Level
 
@@ -43,9 +43,7 @@ Analyst requests population information about the world.
 
 ## EXTENSIONS
 
-*put here the extensions, one at a time, each referring to the step of the main scenario*
-
-1. **Condition**: action of sub use cas
+None.
 
 ## SUB-VARIATIONS
 
