@@ -8,7 +8,7 @@ As an urban planner I want to see the top N populated cities in a country where 
 
 ### Scope
 
-Organistaion
+Organisation.
 
 ### Level
 
