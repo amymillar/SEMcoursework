@@ -8,7 +8,7 @@ As a population analyst I want to see all the countries in a continent organised
 
 ### Scope
 
-*what system is considered black-box under design*
+Organisation
 
 ### Level
 
@@ -16,11 +16,11 @@ Primary task.
 
 ### Preconditions
 
-*what we expect is already the state of the world*
+Database contains up-to-date population data for the world.
 
 ### Success End Condition
 
-*the state of the world upon successful completion*
+A report is available for analyst to study country population trends.
 
 ### Failed End Condition
 
@@ -28,29 +28,26 @@ No report is produced.
 
 ### Primary Actor
 
-*a role name for the primary actor, or description*
+Population Analyst
 
 ### Trigger
 
-*the action upon the system that starts the use case, may be a time event*
+Population analyst requests report on countries in a continent organised by population
 
 ## MAIN SUCCESS SCENARIO
 
-*put here the steps of the scenario from trigger to goal delivery, and any cleanup after*
-
-1. action description
+1. Analyst requests info on countries in a continent organised from largest population to smallest.
+2. System accesses world database.
+3. System sorts through results and organises data by population
+4. System provides generated report
 
 ## EXTENSIONS
 
-*put here the extensions, one at a time, each referring to the step of the main scenario*
-
-1. **Condition**: action of sub use case
+None.
 
 ## SUB-VARIATIONS
 
-*put here the sub-variations that will cause eventual branching in the scenario*
-
-1. list of sub-variations
+None.
 
 ## SCHEDULE
 
