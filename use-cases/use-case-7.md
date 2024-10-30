@@ -8,7 +8,7 @@ As an urban planner I want to see the cities in a region organised by largest po
 
 ### Scope
 
-*what system is considered black-box under design*
+Organisation
 
 ### Level
 
@@ -16,11 +16,11 @@ Primary task.
 
 ### Preconditions
 
-*what we expect is already the state of the world*
+Database contains up-to-date population data for the region.
 
 ### Success End Condition
 
-*the state of the world upon successful completion*
+A report is available for planner to study regional populations
 
 ### Failed End Condition
 
@@ -28,23 +28,22 @@ No report is produced.
 
 ### Primary Actor
 
-*a role name for the primary actor, or description*
+Urban Planner
 
 ### Trigger
 
-*the action upon the system that starts the use case, may be a time event*
+Urban Planner requests population data on regions cities
 
 ## MAIN SUCCESS SCENARIO
 
-*put here the steps of the scenario from trigger to goal delivery, and any cleanup after*
-
-1. action description
+1. Analyst request the information for population per city in a region.
+2. System accesses regions data from world database.
+3. System sorts the regions populations in descending order by city.
+4. System provides a generated report to analyst.
 
 ## EXTENSIONS
 
-*put here the extensions, one at a time, each referring to the step of the main scenario*
-
-1. **Condition**: action of sub use case
+None.
 
 ## SUB-VARIATIONS
 
