@@ -43,8 +43,8 @@ Development advisor requests database to produce a report on populations of peop
 
 ## EXTENSIONS
 
-3. **Continent doesnt exist:**
-   i. System informs development advisor continent doesnt exist.
+3. **Country doesnt exist:**
+   i. System informs development advisor country doesnt exist.
 
 ## SUB-VARIATIONS
 
