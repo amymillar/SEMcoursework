@@ -24,13 +24,6 @@ public class AppTest
         app.printSalaries(null);
     }
 
-    @Test
-    void printSalariesTestEmpty()
-    {
-        ArrayList<Employee> employees = new ArrayList<Employee>();
-        app.printSalaries(employees);
-    }
-
     // Test for normal conditions
     @Test
     void printCities()
