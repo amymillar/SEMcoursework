@@ -1,4 +1,4 @@
-papackage com.napier.semCoursework;
+package com.napier.semCoursework;
 import java.sql.*;
 
 public class App
