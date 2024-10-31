@@ -1,9 +1,9 @@
-name: A workflow for my Coursework App
+name: A workflow for my Hello World App
 on: push
 
 jobs:
   build:
-    name: Coursework action
+    name: Hello world action
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
@@ -19,4 +19,6 @@ jobs:
         run: mvn package
       - name: Run docker compose
         run: docker compose up --abort-on-container-exit
+
+
 
