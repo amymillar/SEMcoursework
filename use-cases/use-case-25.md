@@ -39,8 +39,7 @@ Development advisor requests database to produce a report on populations of peop
 1. Development advisor requests report on populations of people in a region.
 2. System captures region name.
 3. System extracts populations of people, people living in and out of cities in region.
-4. System produces report.
-
+4. System provides a generated report to analyst.
 ## EXTENSIONS
 
 3. **region doesnt exist:**
