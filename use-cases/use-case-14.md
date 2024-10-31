@@ -32,7 +32,7 @@ Urban Planner
 
 ### Trigger
 
-User inputs N value
+Urban planner inputs N value
 
 ## MAIN SUCCESS SCENARIO
 
@@ -43,7 +43,8 @@ User inputs N value
 
 ## EXTENSIONS
 
-None.
+2. Input(N) is invalid:
+   i. System requests user to enter valid numeric input.
 
 ## SUB-VARIATIONS
 
