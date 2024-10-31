@@ -31,18 +31,19 @@ Urban Planner
 
 ### Trigger
 
-User inputs N value
+Urban planner inputs N value
 
 ## MAIN SUCCESS SCENARIO
 
 1. Analyst requests info on top N populated cities in region.
-2. System accesses world database.
+2. System accesses regions data from world database.
 3. System sorts through results and produces data on top N populated cities.
 4. System provides generated report.
 
 ## EXTENSIONS
 
-None.
+3. Region doesnt exist:
+   i. System informs urban planner region doesn't exist.
 
 ## SUB-VARIATIONS
 
