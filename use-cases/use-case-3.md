@@ -43,7 +43,8 @@ Analyst requests population information about the countries in a continent
 
 ## EXTENSIONS
 
-None.
+3. Continent doesn't exist:
+   i. System informs Analyst continent doesnt exist
 
 ## SUB-VARIATIONS
 

@@ -43,7 +43,8 @@ Urban Planner requests population data on regions cities
 
 ## EXTENSIONS
 
-None.
+3. Region doesn't exist:
+   i. System informs urban planner region doesnt exist.
 
 ## SUB-VARIATIONS
 

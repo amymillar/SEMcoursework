@@ -43,7 +43,8 @@ Urban Planner requests population data on countries cities.
 
 ## EXTENSIONS
 
-None.
+3. Country doesn't exist:
+   i. System informs urban planner country doesn't exist.
 
 ## SUB-VARIATIONS
 
