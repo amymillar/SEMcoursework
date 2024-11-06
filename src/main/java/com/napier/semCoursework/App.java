@@ -89,26 +89,30 @@ public class App
 
     public List<Country> getAllCountries()
     {
+        // list to hold countries data
         List<Country> countries = new ArrayList<>();
         try
         {
             // Create an SQL statement
             Statement stmt = con.createStatement();
             // Create string for SQL statement
+            // Get the name and population of each country and order them by biggest population to smallest
             String strSelect =
                     "SELECT name, population "
                             + "FROM country "
                             + "ORDER BY population DESC";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
-            // Return new employee if valid.
-            // Check one is returned
+
+            // Check each row in result set
             while (rset.next())
             {
+                // Create new country object and set its name and population
                 Country country = new Country();
                 country.name = rset.getString("name");
                 country.population = rset.getInt("population");
 
+                // Add country to the list
                 countries.add(country);
             }
             rset.close();
@@ -116,6 +120,7 @@ public class App
         }
         catch (Exception e)
         {
+            // Print error message if query fails
             System.out.println(e.getMessage());
             System.out.println("Failed to country details");
         }
