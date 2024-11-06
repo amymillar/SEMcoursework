@@ -117,15 +117,27 @@ public class App
         catch (Exception e)
         {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get employee details");
+            System.out.println("Failed to country details");
         }
         return countries;
     }
 
     public void displayCountries(List<Country> countries)
     {
+        // Check countries is not null
+        if (countries == null)
+        {
+            System.out.println("No countries found");
+            return;
+        }
+
+        // Loop over all the countries in the list
         for (Country country : countries)
         {
+            // Check if a country is null
+            if (country == null)
+                continue;
+            // Print out country name and its population
             System.out.println(
                     "Name:" + country.name + "\n"
                             + "Population:" + country.population + "\n");

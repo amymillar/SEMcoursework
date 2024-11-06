@@ -48,6 +48,4 @@ public class AppTest
         country.population = 3862000;
         app.displayCountries(countries);
     }
-
-
 }
