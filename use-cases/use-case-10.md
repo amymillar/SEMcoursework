@@ -44,7 +44,7 @@ Urban Planner requests population data on all district cities.
 ## EXTENSIONS
 
 3. District doesn't exist:
-   i. System infroms urban planner district doesn't exist.
+   i. System informs urban planner district doesn't exist.
 
 ## SUB-VARIATIONS
 
