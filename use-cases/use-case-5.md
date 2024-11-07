@@ -37,13 +37,14 @@ Analyst inputs N value
 ## MAIN SUCCESS SCENARIO
 
 1. Analyst requests info on top N countries in region.
-2. System accesses world database.
+2. System captures continents data.
 3. System sorts through results and produces data on top N populated countries in region.
 4. System provides generated report to analyst.
 
 ## EXTENSIONS
 
-None.
+3. Continent doesn't exist:
+   i. System informs Analyst continent doesn't exist.
 
 ## SUB-VARIATIONS
 

@@ -37,13 +37,14 @@ Analyst requests population information about the countries in a region.
 ## MAIN SUCCESS SCENARIO
 
 1. Analyst request the information for a regions population.
-2. System accesses regions data from world database.
+2. System captures regions name.
 3. System sorts the regions populations in descending order.
 4. System provides a generated report to analyst.
 
 ## EXTENSIONS
 
-None.
+3. region doesn't exist:
+   i. System informs Analyst region does not exist
 
 ## SUB-VARIATIONS
 

@@ -1,9 +1,9 @@
-name: A workflow for my Hello World App
+name: A workflow for my Coursework App
 on: push
 
 jobs:
   build:
-    name: Hello world action
+    name: Coursework action
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
@@ -15,10 +15,9 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-      - name: Build with Maven
-        run: mvn package
-      - name: Run docker compose
-        run: docker compose up --abort-on-container-exit
-
-
-
+      - name: Unit Tests
+        run: mvn -Dtest=com.napier.semCoursework.AppTest test
+      - name: Package and Run docker compose
+        run: |
+          mvn package -DskipTests
+          docker compose up --abort-on-container-

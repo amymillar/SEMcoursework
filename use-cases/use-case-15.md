@@ -37,13 +37,14 @@ Population analyst requests report on countries in a continent organised by popu
 ## MAIN SUCCESS SCENARIO
 
 1. Analyst requests info on countries in a continent organised from largest population to smallest.
-2. System accesses world database.
+2. System accesses continents data from world database.
 3. System sorts through results and organises data by population
 4. System provides generated report
 
 ## EXTENSIONS
 
-None.
+3. Continent doesn't exist:
+   i. System informs Analyst continent doesn't exist.
 
 ## SUB-VARIATIONS
 

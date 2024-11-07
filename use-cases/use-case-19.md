@@ -37,13 +37,14 @@ Urban Planner requests report on capital cities in a region organised by largest
 ## MAIN SUCCESS SCENARIO
 
 1. Urban Planner requests info on capital cities in a region organised from largest population to smallest.
-2. System accesses world database.
+2. System accesses regions data from world database.
 3. System sorts through results and organises data by population.
 4. System provides generated report.
 
 ## EXTENSIONS
 
-None.
+3.  Region doesn't exist:
+   i. System informs urban planner region doesnt exist.
 
 ## SUB-VARIATIONS
 

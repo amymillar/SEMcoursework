@@ -37,13 +37,14 @@ User inputs N value
 ## MAIN SUCCESS SCENARIO
 
 1. Analyst requests info on top N populated cities in country.
-2. System accesses world database.
+2. System accesses countries data from world database.
 3. System sorts through results and produces data on top N populated cities.
 4. System provides generated report.
 
 ## EXTENSIONS
 
-None.
+3. Country doesn't exist:
+   i. System infroms urban planner country doesn't exist.
 
 ## SUB-VARIATIONS
 

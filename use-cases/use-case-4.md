@@ -20,7 +20,7 @@ Database contains up-to-date population data for the region.
 
 ### Success End Condition
 
-A report is available for analysts to study population sizes.
+A report is available for analysts to study population data.
 
 ### Failed End Condition
 
@@ -37,13 +37,14 @@ Analyst inputs N value
 ## MAIN SUCCESS SCENARIO
 
 1. Analyst requests info on top N countries in region.
-2. System accesses world database.
+2. System captures regions data.
 3. System sorts through results and produces data on top N populated countries in region.
 4. System provides generated report to analyst.
 
 ## EXTENSIONS
 
-None.
+3. Region doesnt exist: 
+  i. System informs Analyst continent doesnt exist
 
 ## SUB-VARIATIONS
 

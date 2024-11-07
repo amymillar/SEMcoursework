@@ -43,7 +43,8 @@ Urban Planner inputs N value.
 
 ## EXTENSIONS
 
-None
+1. Input(N) is invalid:
+   i. System requests user for valid input.
 
 ## SUB-VARIATIONS
 

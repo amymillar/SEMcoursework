@@ -44,7 +44,10 @@ Urban Planner enters N value.
 
 ## EXTENSIONS
 
-None.
+1. Input(N) is invalid:
+   i. System requests user for valid input.
+3. Continents doesn't exist:
+   i. System informs user continent doesn't exist.
 
 ## SUB-VARIATIONS
 
