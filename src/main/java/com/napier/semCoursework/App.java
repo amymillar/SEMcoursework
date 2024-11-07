@@ -17,7 +17,7 @@ public class App
         // Get all countries
         List<Country> countries = a.getAllCountries();
         // Display all countries
-        a.displayCountries(countries);
+        a.printCountriesByPopulation(countries);
 
         // Disconnect from database
         a.disconnect();
@@ -127,7 +127,7 @@ public class App
         return countries;
     }
 
-    public void displayCountries(List<Country> countries)
+    public void printCountriesByPopulation(List<Country> countries)
     {
         // Check countries is not null
         if (countries == null)
@@ -145,7 +145,7 @@ public class App
             // Print out country name and its population
             System.out.println(
                     "Name:" + country.name + "\n"
-                            + "Population:" + country.population + "\n");
+                            + "Population:" + country.population);
         }
     }
 }

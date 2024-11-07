@@ -9,35 +9,42 @@ public class AppTest
 {
     static App app;
 
+
+    // Create initial construction work to manage tests
     @BeforeAll
     static void init()
     {
+        // create instance of App to work with
         app = new App();
     }
 
+    // Test to check what happens when null is passed to displayCountries
     @Test
-    void displayCountriesTestNull()
+    void printCountriesByPopulationTestNull()
     {
-        app.displayCountries(null);
+        app.printCountriesByPopulation(null);
     }
 
+    // Test what happens when employee is empty
     @Test
-    void displayCountriesTestEmpty()
+    void printCountriesByPopulationTestEmpty()
     {
         ArrayList<Country> countries = new ArrayList<Country>();
-        app.displayCountries(countries);
+        app.printCountriesByPopulation(countries);
     }
 
+    // Test what happens when a list with a null value is printed
     @Test
     void displayCountriesTestContainsNull()
     {
         ArrayList<Country> countries = new ArrayList<Country>();
         countries.add(null);
-        app.displayCountries(countries);
+        app.printCountriesByPopulation(countries);
     }
 
+    // Test with normal conditions
     @Test
-    void displayCountries()
+    void printCountriesByPopulation()
     {
         ArrayList<Country> countries = new ArrayList<Country>();
         Country country = new Country();
@@ -46,6 +53,6 @@ public class AppTest
         country.continent = "Oceania";
         country.region = "Australia and New Zealand";
         country.population = 3862000;
-        app.displayCountries(countries);
+        app.printCountriesByPopulation(countries);
     }
 }
