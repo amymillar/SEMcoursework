@@ -6,17 +6,19 @@ import java.util.List;
 
 public class App
 {
-    public static void main(String[] args)
-    {
-        // Create new Application
+    public static void main(String[] args) {
+        // Create new Application and connect to database
         App a = new App();
 
-        // Connect to database
-        a.connect();
+        if (args.length < 1) {
+            a.connect("localhost:33060", 10000);
+        } else {
+            a.connect(args[0], Integer.parseInt(args[1]));
+        }
 
-        // Get all countries
-        List<Country> countries = a.getAllCountries();
-        // Display all countries
+        ArrayList<Country> countries = a.getAllCountries();
+
+        // Print salary report
         a.printCountriesByPopulation(countries);
 
         // Disconnect from database
@@ -30,44 +32,42 @@ public class App
     /**
      * Connect to the MySQL database.
      */
-    public void connect()
-    {
-        try
-        {
+    public void connect(String location, int delay) {
+        try {
             // Load Database driver
             Class.forName("com.mysql.cj.jdbc.Driver");
-        }
-        catch (ClassNotFoundException e)
-        {
+        } catch (ClassNotFoundException e) {
             System.out.println("Could not load SQL driver");
             System.exit(-1);
         }
 
         int retries = 10;
-        for (int i = 0; i < retries; ++i)
-        {
+        boolean shouldWait = false;
+        for (int i = 0; i < retries; ++i) {
             System.out.println("Connecting to database...");
-            try
-            {
-                // Wait a bit for db to start
-                Thread.sleep(30000);
+            try {
+                if (shouldWait) {
+                    // Wait a bit for db to start
+                    Thread.sleep(delay);
+                }
+
                 // Connect to database
-                con = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "example");
+                con = DriverManager.getConnection("jdbc:mysql://" + location
+                                + "/world?allowPublicKeyRetrieval=true&useSSL=false",
+                        "root", "example");
                 System.out.println("Successfully connected");
                 break;
-            }
-            catch (SQLException sqle)
-            {
-                System.out.println("Failed to connect to database attempt " + Integer.toString(i));
+            } catch (SQLException sqle) {
+                System.out.println("Failed to connect to database attempt " + i);
                 System.out.println(sqle.getMessage());
-            }
-            catch (InterruptedException ie)
-            {
+
+                // Let's wait before attempting to reconnect
+                shouldWait = true;
+            } catch (InterruptedException ie) {
                 System.out.println("Thread interrupted? Should not happen.");
             }
         }
     }
-
     /**
      * Disconnect from the MySQL database.
      */
@@ -87,10 +87,10 @@ public class App
         }
     }
 
-    public List<Country> getAllCountries()
+    public ArrayList<Country> getAllCountries()
     {
         // list to hold countries data
-        List<Country> countries = new ArrayList<>();
+        ArrayList<Country> countries = new ArrayList<>();
         try
         {
             // Create an SQL statement
