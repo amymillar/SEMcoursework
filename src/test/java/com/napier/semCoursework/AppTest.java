@@ -35,10 +35,30 @@ public class AppTest
 
     // Test what happens when a list with a null value is printed
     @Test
-    void displayCountriesTestContainsNull()
+    void printCountriesByPopulationTestContainsNull()
     {
         ArrayList<Country> countries = new ArrayList<Country>();
         countries.add(null);
+        app.printCountriesByPopulation(countries);
+    }
+
+    // Test to validate ordering of countries by population
+    @Test
+    void printCountriesByPopulationTestOrdering()
+    {
+        ArrayList<Country> countries = new ArrayList<>();
+
+        Country country1 = new Country();
+        country1.name = "Australia";
+        country1.population = 25000000;
+
+        Country country2 = new Country();
+        country2.name = "New Zealand";
+        country2.population = 3862000;
+
+        countries.add(country2);
+        countries.add(country1);
+
         app.printCountriesByPopulation(countries);
     }
 
