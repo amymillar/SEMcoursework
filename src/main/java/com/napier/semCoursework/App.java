@@ -127,48 +127,6 @@ public class App
         return countries;
     }
 
-    public ArrayList<Country> getCountriesByContinent(String continent)
-    {
-        // List to hold countries data
-        ArrayList<Country> countries = new ArrayList<>();
-        try
-        {
-            // Create an SQL statement
-            Statement stmt = con.createStatement();
-            // Create string for SQL statement
-            // Get the name and population of each country in the specified continent
-            // order by biggest population to smallest
-            String strSelect =
-                    "SELECT name, population "
-                            + "FROM country "
-                            + "WHERE continent = '" + continent + "' "
-                            + "ORDER BY population DESC";
-            // Execute SQL statement
-            ResultSet rset = stmt.executeQuery(strSelect);
-
-            // Check each row in result set
-            while (rset.next())
-            {
-                // Create new country object and set its name and population
-                Country country = new Country();
-                country.name = rset.getString("name");
-                country.population = rset.getInt("population");
-
-                // Add country to the list
-                countries.add(country);
-            }
-            rset.close();
-            stmt.close();
-        }
-        catch (Exception e)
-        {
-            // Print error message if query fails
-            System.out.println(e.getMessage());
-            System.out.println("Failed to get countries in the continent");
-        }
-        return countries;
-    }
-
     public void printCountriesByPopulation(List<Country> countries)
     {
         // Check countries is not null
