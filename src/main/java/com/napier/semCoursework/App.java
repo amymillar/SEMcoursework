@@ -16,12 +16,20 @@ public class App
             a.connect(args[0], Integer.parseInt(args[1]));
         }
 
+        // Get all countries in the world and display them ordered by population
         ArrayList<Country> countries = a.getAllCountries();
-        // Print salary report
+        System.out.println("All the countries in the world:");
         a.printCountriesByPopulation(countries);
 
+        // Get all the countries in asia and display them ordered by population
         ArrayList<Country> asianCountries = a.getCountriesByContinent("Asia");
+        System.out.println("Countries in Asia:");
         a.printCountriesByPopulation(asianCountries);
+
+        // Get all countries in Western Europe and display them ordered by population
+        ArrayList<Country> europeanCountries = a.getCountriesByRegion("Southern and Central Asia");
+        System.out.println("Countries in Southern and Central Asia:");
+        a.printCountriesByPopulation(europeanCountries);
 
         // Disconnect from database
         a.disconnect();
@@ -177,6 +185,51 @@ public class App
             // Print error message if query fails
             System.out.println(e.getMessage());
             System.out.println("Failed to get countries in the continent");
+        }
+        return countries;
+    }
+
+    /**
+     * Gets all the countries in a specific region from the database
+     * Orders them from largest population to smallest
+     * Returns A list of countries sorted by population
+     */
+    public ArrayList<Country> getCountriesByRegion(String region)
+    {
+        // List to hold countries data
+        ArrayList<Country> countries = new ArrayList<>();
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT name, population "
+                            + "FROM country "
+                            + "WHERE region = '" + region + "' "
+                            + "ORDER BY population DESC";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            // Check each row in result set
+            while (rset.next())
+            {
+                // Create new country object and set its name and population
+                Country country = new Country();
+                country.name = rset.getString("name");
+                country.population = rset.getInt("population");
+
+                // Add country to the list
+                countries.add(country);
+            }
+            rset.close();
+            stmt.close();
+        }
+        catch (Exception e)
+        {
+            // Print error message if query fails
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get countries in the region");
         }
         return countries;
     }
