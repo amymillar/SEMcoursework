@@ -3,7 +3,6 @@ package com.napier.semCoursework;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
-import java.util.List;
 
 public class AppTest
 {

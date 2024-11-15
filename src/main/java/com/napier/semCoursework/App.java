@@ -17,7 +17,7 @@ public class App
         }
 
         ArrayList<Country> countries = a.getAllCountries();
-        // Print countries in order from largest population to smallest
+        // Print salary report
         a.printCountriesByPopulation(countries);
 
         ArrayList<Country> asianCountries = a.getCountriesByContinent("Asia");
@@ -89,6 +89,11 @@ public class App
         }
     }
 
+    /**
+     * Gets all the countries from the world database
+     * Orders them from largest population to smallest
+     * Returns A list of countries sorted by population
+     */
     public ArrayList<Country> getAllCountries()
     {
         // list to hold countries data
@@ -129,6 +134,11 @@ public class App
         return countries;
     }
 
+    /**
+     * Gets all the countries in a specific continent from the database
+     * Orders them from largest population to smallest
+     * Returns A list of countries sorted by population
+     */
     public ArrayList<Country> getCountriesByContinent(String continent)
     {
         // List to hold countries data
@@ -171,6 +181,9 @@ public class App
         return countries;
     }
 
+    /**
+     * Prints the list of countries and their populations.
+     */
     public void printCountriesByPopulation(List<Country> countries)
     {
         // Check countries is not null
@@ -185,6 +198,7 @@ public class App
         {
             // Check if a country is null
             if (country == null)
+                // Skip null entries in the list
                 continue;
             // Print out country name and its population
             System.out.println(
