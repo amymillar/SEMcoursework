@@ -17,7 +17,6 @@ public class App
         }
 
         ArrayList<Country> countries = a.getAllCountries();
-
         // Print salary report
         a.printCountriesByPopulation(countries);
 
