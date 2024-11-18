@@ -20,8 +20,13 @@ public class AppIntegrationTest
     }
 
     @Test
-    void testGetAllCountries()
+    void testGetCountry()
     {
-
+        Country country = app.getCountry("ITA");
+        assertEquals(country.code, "ITA");
+        assertEquals(country.name, "Italy");
+        assertEquals(country.continent, "Europe");
+        assertEquals(country.region, "Southern Europe");
+        assertEquals(country.population,57680000);
     }
 }

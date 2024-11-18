@@ -259,4 +259,38 @@ public class App
                             + "Population:" + country.population);
         }
     }
+
+    public Country getCountry(String countryCode) {
+        Country country = null;
+        try {
+            // Create an SQL statement
+            PreparedStatement stmt = con.prepareStatement(
+                    "SELECT code, name, continent, region, population "
+                            + "FROM country "
+                            + "WHERE code = ?"
+            );
+            // Set the parameter for the query
+            stmt.setString(1, countryCode);
+
+            // Execute the query
+            ResultSet rset = stmt.executeQuery();
+
+            // Process the result set
+            if (rset.next()) {
+                country = new Country();
+                country.code = rset.getString("code");
+                country.name = rset.getString("name");
+                country.continent = rset.getString("continent");
+                country.region = rset.getString("region");
+                country.population = rset.getInt("population");
+            }
+
+            // Close result set and statement
+            rset.close();
+            stmt.close();
+        } catch (SQLException e) {
+            System.out.println("Failed to retrieve country: " + e.getMessage());
+        }
+        return country;
+    }
 }

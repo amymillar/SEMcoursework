@@ -4,7 +4,7 @@ on:
     branches:
       - main
       - develop
-      - feature/integration-testing
+      - feature/population-reports
 jobs:
   UnitTests:
     name: Unit Tests

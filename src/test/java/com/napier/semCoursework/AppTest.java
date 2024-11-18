@@ -41,8 +41,6 @@ public class AppTest
         app.printCountriesByPopulation(countries);
     }
 
-
-
     // Test with normal conditions
     @Test
     void printCountriesByPopulation()
