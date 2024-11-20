@@ -18,15 +18,4 @@ public class AppIntegrationTest
         app = new App();
         app.connect("localhost:33060", 30000);
     }
-
-    @Test
-    void testGetCountry()
-    {
-        Country country = app.getCountry("ITA");
-        assertEquals(country.code, "ITA");
-        assertEquals(country.name, "Italy");
-        assertEquals(country.continent, "Europe");
-        assertEquals(country.region, "Southern Europe");
-        assertEquals(country.population,57680000);
-    }
 }

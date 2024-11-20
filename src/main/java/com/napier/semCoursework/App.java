@@ -4,8 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class App
-{
+public class App {
     public static void main(String[] args) {
         // Create new Application and connect to database
         App a = new App();
@@ -34,6 +33,7 @@ public class App
         // Disconnect from database
         a.disconnect();
     }
+
     /**
      * Connection to MySQL database.
      */
@@ -78,20 +78,16 @@ public class App
             }
         }
     }
+
     /**
      * Disconnect from the MySQL database.
      */
-    public void disconnect()
-    {
-        if (con != null)
-        {
-            try
-            {
+    public void disconnect() {
+        if (con != null) {
+            try {
                 // Close connection
                 con.close();
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 System.out.println("Error closing connection to database");
             }
         }
@@ -102,12 +98,10 @@ public class App
      * Orders them from largest population to smallest
      * Returns A list of countries sorted by population
      */
-    public ArrayList<Country> getAllCountries()
-    {
+    public ArrayList<Country> getAllCountries() {
         // list to hold countries data
         ArrayList<Country> countries = new ArrayList<>();
-        try
-        {
+        try {
             // Create an SQL statement
             Statement stmt = con.createStatement();
             // Create string for SQL statement
@@ -120,8 +114,7 @@ public class App
             ResultSet rset = stmt.executeQuery(strSelect);
 
             // Check each row in result set
-            while (rset.next())
-            {
+            while (rset.next()) {
                 // Create new country object and set its name and population
                 Country country = new Country();
                 country.name = rset.getString("name");
@@ -132,9 +125,7 @@ public class App
             }
             rset.close();
             stmt.close();
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             // Print error message if query fails
             System.out.println(e.getMessage());
             System.out.println("Failed to country details");
@@ -147,12 +138,10 @@ public class App
      * Orders them from largest population to smallest
      * Returns A list of countries sorted by population
      */
-    public ArrayList<Country> getCountriesByContinent(String continent)
-    {
+    public ArrayList<Country> getCountriesByContinent(String continent) {
         // List to hold countries data
         ArrayList<Country> countries = new ArrayList<>();
-        try
-        {
+        try {
             // Create an SQL statement
             Statement stmt = con.createStatement();
             // Create string for SQL statement
@@ -167,8 +156,7 @@ public class App
             ResultSet rset = stmt.executeQuery(strSelect);
 
             // Check each row in result set
-            while (rset.next())
-            {
+            while (rset.next()) {
                 // Create new country object and set its name and population
                 Country country = new Country();
                 country.name = rset.getString("name");
@@ -179,9 +167,7 @@ public class App
             }
             rset.close();
             stmt.close();
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             // Print error message if query fails
             System.out.println(e.getMessage());
             System.out.println("Failed to get countries in the continent");
@@ -194,12 +180,10 @@ public class App
      * Orders them from largest population to smallest
      * Returns A list of countries sorted by population
      */
-    public ArrayList<Country> getCountriesByRegion(String region)
-    {
+    public ArrayList<Country> getCountriesByRegion(String region) {
         // List to hold countries data
         ArrayList<Country> countries = new ArrayList<>();
-        try
-        {
+        try {
             // Create an SQL statement
             Statement stmt = con.createStatement();
             // Create string for SQL statement
@@ -212,8 +196,7 @@ public class App
             ResultSet rset = stmt.executeQuery(strSelect);
 
             // Check each row in result set
-            while (rset.next())
-            {
+            while (rset.next()) {
                 // Create new country object and set its name and population
                 Country country = new Country();
                 country.name = rset.getString("name");
@@ -224,9 +207,7 @@ public class App
             }
             rset.close();
             stmt.close();
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             // Print error message if query fails
             System.out.println(e.getMessage());
             System.out.println("Failed to get countries in the region");
@@ -237,18 +218,15 @@ public class App
     /**
      * Prints the list of countries and their populations.
      */
-    public void printCountriesByPopulation(List<Country> countries)
-    {
+    public void printCountriesByPopulation(List<Country> countries) {
         // Check countries is not null
-        if (countries == null)
-        {
+        if (countries == null) {
             System.out.println("No countries found");
             return;
         }
 
         // Loop over all the countries in the list
-        for (Country country : countries)
-        {
+        for (Country country : countries) {
             // Check if a country is null
             if (country == null)
                 // Skip null entries in the list
@@ -258,39 +236,5 @@ public class App
                     "Name:" + country.name + "\n"
                             + "Population:" + country.population);
         }
-    }
-
-    public Country getCountry(String countryCode) {
-        Country country = null;
-        try {
-            // Create an SQL statement
-            PreparedStatement stmt = con.prepareStatement(
-                    "SELECT code, name, continent, region, population "
-                            + "FROM country "
-                            + "WHERE code = ?"
-            );
-            // Set the parameter for the query
-            stmt.setString(1, countryCode);
-
-            // Execute the query
-            ResultSet rset = stmt.executeQuery();
-
-            // Process the result set
-            if (rset.next()) {
-                country = new Country();
-                country.code = rset.getString("code");
-                country.name = rset.getString("name");
-                country.continent = rset.getString("continent");
-                country.region = rset.getString("region");
-                country.population = rset.getInt("population");
-            }
-
-            // Close result set and statement
-            rset.close();
-            stmt.close();
-        } catch (SQLException e) {
-            System.out.println("Failed to retrieve country: " + e.getMessage());
-        }
-        return country;
     }
 }
