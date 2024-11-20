@@ -12,10 +12,49 @@ public class AppIntegrationTest
 {
     static App app;
 
+    /**
+     * Create a random entry into the database to use for testing
+     */
     @BeforeAll
     static void init()
     {
         app = new App();
         app.connect("localhost:33060", 30000);
+    }
+
+    /**
+     * Test that the getAllCountries method returns a valid list of all the countries in the world
+     */
+    @Test
+    void testGetAllCountries()
+    {
+        // Call the method to retrieve all the countries from the world database
+        ArrayList<Country> countries = app.getAllCountries();
+        // Check the list of countries is not null
+        assertNotNull(countries);
+    }
+
+    /**
+     * Test that the getCountriesByContinent method returns a valid list of countries from a chosen continent
+     */
+    @Test
+    void testGetCountriesByContinent()
+    {
+        // Call the method to retrieve all the countries in the continent of "Asia"
+        ArrayList<Country> countries = app.getCountriesByContinent("Asia");
+        // Check the list of countries is not null
+        assertNotNull(countries);
+    }
+
+    /**
+     * Test that the getCountriesByRegion method returns a valid list of countries from a chosen region
+     */
+    @Test
+    void testGetCountriesByRegion()
+    {
+        // Call the method to retrieve all the countries in the "Europe" region
+        ArrayList<Country> countries = app.getCountriesByRegion("Europe");
+        // Check the list of countries is not null
+        assertNotNull(countries);
     }
 }
