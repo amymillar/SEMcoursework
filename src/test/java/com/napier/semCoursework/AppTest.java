@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 public class AppTest
 
@@ -24,37 +26,37 @@ public class AppTest
      * Test what happens when null is passed into the printCountriesByPopulation method
      */
     @Test
-    void printCountriesByPopulationTestNull()
+    void printCountriesTestNull()
     {
-        app.printCountriesByPopulation(null);
+        app.printCountries(null);
     }
 
     /**
      * Test what happens when an empty list is passed into the printCountriesByPopulation method
      */
     @Test
-    void printCountriesByPopulationTestEmpty()
+    void printCountriesTestEmpty()
     {
         ArrayList<Country> countries = new ArrayList<>();
-        app.printCountriesByPopulation(countries);
+        app.printCountries(countries);
     }
 
     /**
      * Test what happens when a list containing a null value is passed into the printCountriesByPopulation method
      */
     @Test
-    void printCountriesByPopulationTestContainsNull()
+    void printCountriesTestContainsNull()
     {
         ArrayList<Country> countries = new ArrayList<>();
         countries.add(null);
-        app.printCountriesByPopulation(countries);
+        app.printCountries(countries);
     }
 
     /**
      * Test what happens when a valid list of countries is passed into the printCountriesByPopulation method
      */
     @Test
-    void printCountriesByPopulationTest()
+    void printCountriesTest()
     {
         ArrayList<Country> countries = new ArrayList<>();
 
@@ -77,6 +79,6 @@ public class AppTest
         countries.add(country2);
 
         // Call the method with a valid list
-        app.printCountriesByPopulation(countries);
+        app.printCountries(countries);
     }
 }

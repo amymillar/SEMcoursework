@@ -1,6 +1,8 @@
 package com.napier.semCoursework;
 
-// Country class
+/**
+ * Country class
+ */
 public class Country
 {
     // Declare attributes for country

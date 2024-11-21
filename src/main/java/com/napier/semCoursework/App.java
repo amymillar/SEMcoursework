@@ -18,17 +18,17 @@ public class App {
         // Get all countries in the world and display them ordered by population
         ArrayList<Country> countries = a.getAllCountries();
         System.out.println("All the countries in the world:");
-        a.printCountriesByPopulation(countries);
+        a.printCountries(countries);
 
         // Get all the countries in asia and display them ordered by population
-        ArrayList<Country> asianCountries = a.getCountriesByContinent("Asia");
-        System.out.println("Countries in Asia:");
-        a.printCountriesByPopulation(asianCountries);
+        ArrayList<Country> asianCountries = a.getCountriesByContinent("Europe");
+        System.out.println("Countries in Europe:");
+        a.printCountries(asianCountries);
 
         // Get all countries in Western Europe and display them ordered by population
-        ArrayList<Country> europeanCountries = a.getCountriesByRegion("Southern and Central Asia");
-        System.out.println("Countries in Southern and Central Asia:");
-        a.printCountriesByPopulation(europeanCountries);
+        ArrayList<Country> europeanCountries = a.getCountriesByRegion("Western Europe");
+        System.out.println("Countries in Western Europe:");
+        a.printCountries(europeanCountries);
 
         // Disconnect from database
         a.disconnect();
@@ -187,10 +187,12 @@ public class App {
             // Create an SQL statement
             Statement stmt = con.createStatement();
             // Create string for SQL statement
+            // Get the name and population of each country in the specified continent
+            // ordered by population descending
             String strSelect =
                     "SELECT name, population "
                             + "FROM country "
-                            + "WHERE region = '" + region + "' "
+                            + "WHERE continent = '" + region  + "' "
                             + "ORDER BY population DESC";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
@@ -218,7 +220,7 @@ public class App {
     /**
      * Prints the list of countries and their populations.
      */
-    public void printCountriesByPopulation(List<Country> countries) {
+    public void printCountries(List<Country> countries) {
         // Check countries is not null
         if (countries == null) {
             System.out.println("No countries found");
