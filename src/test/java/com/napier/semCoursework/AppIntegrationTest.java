@@ -32,6 +32,24 @@ public class AppIntegrationTest
         ArrayList<Country> countries = app.getAllCountries();
         // Check the list of countries is not null
         assertNotNull(countries);
+        // Check the list of countries is not empty
+        assertFalse(countries.isEmpty());
+    }
+
+    /**
+     * Test that getAllCountries returns a list of countries sorted by population in descending order
+     */
+    @Test
+    void testAllCountriesOrderingByPopulation()
+    {
+        ArrayList<Country> countries = app.getAllCountries();
+        assertNotNull(countries);
+
+        // Validate ordering
+        for (int i = 0; i < countries.size() - 1; i++)
+        {
+            assertTrue(countries.get(i).population >= countries.get(i + 1).population);
+        }
     }
 
     /**
@@ -44,6 +62,24 @@ public class AppIntegrationTest
         ArrayList<Country> countries = app.getCountriesByContinent("Asia");
         // Check the list of countries is not null
         assertNotNull(countries);
+        // Check the list of countries is not empty
+        assertFalse(countries.isEmpty());
+    }
+
+    /**
+     * Test that getCountriesByContinent returns a list of countries sorted by population in descending order
+     */
+    @Test
+    void testCountriesByContinentOrderingByPopulation()
+    {
+        ArrayList<Country> countries = app.getAllCountries();
+        assertNotNull(countries);
+
+        // Validate ordering
+        for (int i = 0; i < countries.size() - 1; i++)
+        {
+            assertTrue(countries.get(i).population >= countries.get(i + 1).population);
+        }
     }
 
     /**
@@ -56,5 +92,23 @@ public class AppIntegrationTest
         ArrayList<Country> countries = app.getCountriesByRegion("Europe");
         // Check the list of countries is not null
         assertNotNull(countries);
+        // Check the list of countries is not empty
+        assertFalse(countries.isEmpty());
+    }
+
+    /**
+     * Test that getCountriesByRegion returns a list of countries sorted by population in descending order
+     */
+    @Test
+    void testCountriesByRegionOrderingByPopulation()
+    {
+        ArrayList<Country> countries = app.getAllCountries();
+        assertNotNull(countries);
+
+        // Validate ordering
+        for (int i = 0; i < countries.size() - 1; i++)
+        {
+            assertTrue(countries.get(i).population >= countries.get(i + 1).population);
+        }
     }
 }
