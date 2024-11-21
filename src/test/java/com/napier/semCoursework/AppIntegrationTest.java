@@ -8,6 +8,9 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Class for integration tests on App
+ */
 public class AppIntegrationTest
 {
     static App app;
@@ -28,11 +31,9 @@ public class AppIntegrationTest
     @Test
     void testGetAllCountries()
     {
-        // Call the method to retrieve all the countries from the world database
         ArrayList<Country> countries = app.getAllCountries();
-        // Check the list of countries is not null
+        // Check the list of countries is not null or empty
         assertNotNull(countries);
-        // Check the list of countries is not empty
         assertFalse(countries.isEmpty());
     }
 
@@ -42,11 +43,9 @@ public class AppIntegrationTest
     @Test
     void testGetCountriesByContinent()
     {
-        // Call the method to retrieve all the countries in the continent of "Asia"
         ArrayList<Country> countries = app.getCountriesByContinent("Asia");
-        // Check the list of countries is not null
+        // Check the list of countries is not null or empty
         assertNotNull(countries);
-        // Check the list of countries is not empty
         assertFalse(countries.isEmpty());
     }
 
@@ -56,11 +55,9 @@ public class AppIntegrationTest
     @Test
     void testGetCountriesByRegion()
     {
-        // Call the method to retrieve all the countries in the "Europe" region
         ArrayList<Country> countries = app.getCountriesByRegion("Europe");
-        // Check the list of countries is not null
+        // Check the list of countries is not null or empty
         assertNotNull(countries);
-        // Check the list of countries is not empty
         assertFalse(countries.isEmpty());
     }
 }

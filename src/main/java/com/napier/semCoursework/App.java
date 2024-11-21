@@ -20,15 +20,15 @@ public class App {
         System.out.println("All the countries in the world:");
         a.printCountries(countries);
 
-        // Get all the countries in asia and display them ordered by population
-        ArrayList<Country> asianCountries = a.getCountriesByContinent("Europe");
+        // Get all the countries in europe and display them ordered by population
+        ArrayList<Country> europeCountries = a.getCountriesByContinent("Europe");
         System.out.println("Countries in Europe:");
-        a.printCountries(asianCountries);
+        a.printCountries(europeCountries);
 
         // Get all countries in Western Europe and display them ordered by population
-        ArrayList<Country> europeanCountries = a.getCountriesByRegion("Western Europe");
+        ArrayList<Country> westEuropeCountries = a.getCountriesByRegion("Western Europe");
         System.out.println("Countries in Western Europe:");
-        a.printCountries(europeanCountries);
+        a.printCountries(westEuropeCountries);
 
         // Disconnect from database
         a.disconnect();
@@ -229,9 +229,8 @@ public class App {
 
         // Loop over all the countries in the list
         for (Country country : countries) {
-            // Check if a country is null
+            // Check if a country is null and skip if it is
             if (country == null)
-                // Skip null entries in the list
                 continue;
             // Print out country name and its population
             System.out.println(

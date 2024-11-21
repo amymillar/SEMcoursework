@@ -5,7 +5,7 @@ package com.napier.semCoursework;
  */
 public class City
 {
-    // Declare attributes for country
+    // Declare attributes for city
     public int id;
     public String name;
     public String countryCode;
