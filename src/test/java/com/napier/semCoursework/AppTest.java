@@ -7,7 +7,9 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-
+/**
+ * Class for unit tests on App
+ */
 public class AppTest
 
 {
