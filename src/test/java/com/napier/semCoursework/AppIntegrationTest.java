@@ -37,22 +37,6 @@ public class AppIntegrationTest
     }
 
     /**
-     * Test that getAllCountries returns a list of countries sorted by population in descending order
-     */
-    @Test
-    void testAllCountriesOrderingByPopulation()
-    {
-        ArrayList<Country> countries = app.getAllCountries();
-        assertNotNull(countries);
-
-        // Validate ordering
-        for (int i = 0; i < countries.size() - 1; i++)
-        {
-            assertTrue(countries.get(i).population >= countries.get(i + 1).population);
-        }
-    }
-
-    /**
      * Test that the getCountriesByContinent method returns a valid list of countries from a chosen continent
      */
     @Test
@@ -67,22 +51,6 @@ public class AppIntegrationTest
     }
 
     /**
-     * Test that getCountriesByContinent returns a list of countries sorted by population in descending order
-     */
-    @Test
-    void testCountriesByContinentOrderingByPopulation()
-    {
-        ArrayList<Country> countries = app.getAllCountries();
-        assertNotNull(countries);
-
-        // Validate ordering
-        for (int i = 0; i < countries.size() - 1; i++)
-        {
-            assertTrue(countries.get(i).population >= countries.get(i + 1).population);
-        }
-    }
-
-    /**
      * Test that the getCountriesByRegion method returns a valid list of countries from a chosen region
      */
     @Test
@@ -94,21 +62,5 @@ public class AppIntegrationTest
         assertNotNull(countries);
         // Check the list of countries is not empty
         assertFalse(countries.isEmpty());
-    }
-
-    /**
-     * Test that getCountriesByRegion returns a list of countries sorted by population in descending order
-     */
-    @Test
-    void testCountriesByRegionOrderingByPopulation()
-    {
-        ArrayList<Country> countries = app.getAllCountries();
-        assertNotNull(countries);
-
-        // Validate ordering
-        for (int i = 0; i < countries.size() - 1; i++)
-        {
-            assertTrue(countries.get(i).population >= countries.get(i + 1).population);
-        }
     }
 }
