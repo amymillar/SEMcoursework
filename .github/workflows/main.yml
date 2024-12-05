@@ -2,7 +2,7 @@ name: A workflow for my Coursework App
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   UnitTests:
