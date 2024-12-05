@@ -1,4 +1,4 @@
-package com.napier.semCoursework;
+package com.napier.SEMcoursework;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -17,18 +17,43 @@ public class App {
 
         // Get all countries in the world and display them ordered by population
         ArrayList<Country> countries = a.getAllCountries();
-        System.out.println("All the countries in the world:");
+        System.out.println("ALL THE COUNTRIES IN THE WORLD:");
         a.printCountries(countries);
 
         // Get all the countries in europe and display them ordered by population
         ArrayList<Country> europeCountries = a.getCountriesByContinent("Europe");
-        System.out.println("Countries in Europe:");
+        System.out.println("COUNTRIES IN EUROPE:");
         a.printCountries(europeCountries);
 
         // Get all countries in Western Europe and display them ordered by population
         ArrayList<Country> westEuropeCountries = a.getCountriesByRegion("Western Europe");
-        System.out.println("Countries in Western Europe:");
+        System.out.println("COUNTRIES IN WESTERN EUROPE:");
         a.printCountries(westEuropeCountries);
+
+        // Get all cities in the world and display them ordered by population
+        ArrayList<City> cities = a.getAllCities();
+        System.out.println("ALL THE CITIES IN THE WORLD:");
+        a.printCities(cities);
+
+        // Get all cities in Asia and display them ordered by population
+        ArrayList<City> asianCities = a.getCitiesByContinent("Asia");
+        System.out.println("CITIES IN ASIA:");
+        a.printCities(asianCities);
+
+        // Get all cities in the Middle East and display them ordered by population
+        ArrayList<City> middleEastCities = a.getCitiesByRegion("Middle East");
+        System.out.println("CITIES IN MIDDLE EAST:");
+        a.printCities(middleEastCities);
+
+        // Get all cities in Georgia and display them ordered by population
+        ArrayList<City> georgiaCities = a.getCitiesByCountry("GEO");
+        System.out.println("CITIES IN GEORGIA:");
+        a.printCities(georgiaCities);
+
+        // Get all cities in São Paulo and display them ordered by population
+        ArrayList<City> pauloCities = a.getCitiesByDistrict("São Paulo");
+        System.out.println("CITIES IN THE SAU PAULO DISTRICT:");
+        a.printCities(pauloCities);
 
         // Disconnect from database
         a.disconnect();
@@ -123,6 +148,7 @@ public class App {
                 // Add country to the list
                 countries.add(country);
             }
+            System.out.println("\n");
             rset.close();
             stmt.close();
         } catch (Exception e) {
@@ -217,6 +243,212 @@ public class App {
         return countries;
     }
 
+    public ArrayList<City> getAllCities() {
+        // list to hold cities data
+        ArrayList<City> cities = new ArrayList<>();
+        try {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            // Get the name and population of each city and order them by biggest population to smallest
+            String strSelect =
+                    "SELECT name, population "
+                            + "FROM city "
+                            + "ORDER BY population DESC";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            // Check each row in result set
+            while (rset.next()) {
+                // Create new city object and set its name and population
+                City city = new City();
+                city.name = rset.getString("name");
+                city.population = rset.getInt("population");
+
+                // Add city to the list
+                cities.add(city);
+            }
+            rset.close();
+            stmt.close();
+        } catch (Exception e) {
+            // Print error message if query fails
+            System.out.println(e.getMessage());
+            System.out.println("Failed to city details");
+        }
+        return cities;
+    }
+
+    /**
+     * Gets all the cities in a specific continent from the database
+     * Orders them from largest population to smallest
+     * Returns A list of cities sorted by population
+     */
+    public ArrayList<City> getCitiesByContinent(String continent) {
+        // List to hold countries data
+        ArrayList<City> cities = new ArrayList<>();
+        try {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            // Get the name and population of each city in the specified continent
+            // ordered by population descending
+            String strSelect =
+                    "SELECT city.name, city.population "
+                            + "FROM city "
+                            + "JOIN country ON city.countryCode = country.code "
+                            + "WHERE continent = '" + continent + "' "
+                            + "ORDER BY city.population DESC";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            // Check each row in result set
+            while (rset.next()) {
+                // Create new country object and set its name and population
+                City city = new City();
+                city.name = rset.getString("name");
+                city.population = rset.getInt("population");
+
+                // Add country to the list
+                cities.add(city);
+            }
+            rset.close();
+            stmt.close();
+        } catch (Exception e) {
+            // Print error message if query fails
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get cities in the continent");
+        }
+        return cities;
+    }
+
+    /**
+     * Gets all the cities in a specific region from the database
+     * Orders them from largest population to smallest
+     * Returns A list of cities sorted by population
+     */
+    public ArrayList<City> getCitiesByRegion(String region) {
+        // List to hold countries data
+        ArrayList<City> cities = new ArrayList<>();
+        try {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            // Get the name and population of each city in the specified continent
+            // ordered by population descending
+            String strSelect =
+                    "SELECT city.name, city.population "
+                            + "FROM city "
+                            + "JOIN country ON city.countryCode = country.code "
+                            + "WHERE region = '" + region + "' "
+                            + "ORDER BY city.population DESC";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            // Check each row in result set
+            while (rset.next()) {
+                // Create new city object and set its name and population
+                City city = new City();
+                city.name = rset.getString("name");
+                city.population = rset.getInt("population");
+
+                // Add city to the list
+                cities.add(city);
+            }
+            rset.close();
+            stmt.close();
+        } catch (Exception e) {
+            // Print error message if query fails
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get cities in the region");
+        }
+        return cities;
+    }
+
+    /**
+     * Gets all the cities in a specific country from the database
+     * Orders them from largest population to smallest
+     * Returns A list of cities sorted by population
+     */
+    public ArrayList<City> getCitiesByCountry(String countryCode) {
+        // List to hold countries data
+        ArrayList<City> cities = new ArrayList<>();
+        try {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            // Get the name and population of each city in the specified country
+            // ordered by population descending
+            String strSelect =
+                    "SELECT name, population "
+                            + "FROM city "
+                            + "WHERE countryCode = '" + countryCode + "' "
+                            + "ORDER BY population DESC";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            // Check each row in result set
+            while (rset.next()) {
+                // Create new city object and set its name and population
+                City city = new City();
+                city.name = rset.getString("name");
+                city.population = rset.getInt("population");
+
+                // Add city to the list
+                cities.add(city);
+            }
+            rset.close();
+            stmt.close();
+        } catch (Exception e) {
+            // Print error message if query fails
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get cities in the region");
+        }
+        return cities;
+    }
+
+    /**
+     * Gets all the cities in a specific district from the database
+     * Orders them from largest population to smallest
+     * Returns A list of cities sorted by population
+     */
+    public ArrayList<City> getCitiesByDistrict(String district) {
+        // List to hold cities data
+        ArrayList<City> cities = new ArrayList<>();
+        try {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            // Get the name and population of each city in the specified district
+            // ordered by population descending
+            String strSelect =
+                    "SELECT name, population "
+                            + "FROM city "
+                            + "WHERE district = '" + district + "' "
+                            + "ORDER BY population DESC";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            // Check each row in result set
+            while (rset.next()) {
+                // Create new city object and set its name and population
+                City city = new City();
+                city.name = rset.getString("name");
+                city.population = rset.getInt("population");
+
+                // Add city to the list
+                cities.add(city);
+            }
+            rset.close();
+            stmt.close();
+        } catch (Exception e) {
+            // Print error message if query fails
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get cities in the district");
+        }
+        return cities;
+    }
+
+
     /**
      * Prints the list of countries and their populations.
      */
@@ -236,6 +468,28 @@ public class App {
             System.out.println(
                     "Name:" + country.name + "\n"
                             + "Population:" + country.population);
+        }
+    }
+
+    /**
+     * Prints the list of cities and their populations.
+     */
+    public void printCities(List<City> cities) {
+        // Check cities is not null
+        if (cities == null) {
+            System.out.println("No countries found");
+            return;
+        }
+
+        // Loop over all the city in the list
+        for (City city : cities) {
+            // Check if a city is null and skip if it is
+            if (city == null)
+                continue;
+            // Print out city name and its population
+            System.out.println(
+                    "Name:" + city.name + "\n"
+                            + "Population:" + city.population);
         }
     }
 }
