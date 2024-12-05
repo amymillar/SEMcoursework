@@ -2,6 +2,7 @@ package com.napier.semCoursework;
 
 import com.napier.SEMcoursework.App;
 import com.napier.SEMcoursework.Country;
+import com.napier.SEMcoursework.City;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -24,7 +25,7 @@ public class AppTest {
     }
 
     /**
-     * Test what happens when null is passed into the printCountriesByPopulation method
+     * Test what happens when null is passed into the printCountries method
      */
     @Test
     void printCountriesTestNull() {
@@ -32,7 +33,7 @@ public class AppTest {
     }
 
     /**
-     * Test what happens when an empty list is passed into the printCountriesByPopulation method
+     * Test what happens when an empty list is passed into the printCountries method
      */
     @Test
     void printCountriesTestEmpty() {
@@ -41,7 +42,7 @@ public class AppTest {
     }
 
     /**
-     * Test what happens when a list containing a null value is passed into the printCountriesByPopulation method
+     * Test what happens when a list containing a null value is passed into the printCountries method
      */
     @Test
     void printCountriesTestContainsNull() {
@@ -51,7 +52,7 @@ public class AppTest {
     }
 
     /**
-     * Test what happens when a valid list of countries is passed into the printCountriesByPopulation method
+     * Test what happens when a valid list of countries is passed into the printCountries method
      */
     @Test
     void printCountriesTest() {
@@ -77,5 +78,61 @@ public class AppTest {
 
         // Call the method with a valid list
         app.printCountries(countries);
+    }
+
+    /**
+     * Test what happens when null is passed into the printCities method
+     */
+    @Test
+    void printCitiesTestNull() {
+        app.printCities(null);
+    }
+
+    /**
+     * Test what happens when an empty list is passed into the printCities method
+     */
+    @Test
+    void printCitiesTestEmpty() {
+        ArrayList<City> cities = new ArrayList<>();
+        app.printCities(cities);
+    }
+
+    /**
+     * Test what happens when a list containing a null value is passed into the printCities method
+     */
+    @Test
+    void printCitiesTestContainsNull() {
+        ArrayList<City> cities = new ArrayList<>();
+        cities.add(null);
+        app.printCities(cities);
+    }
+
+    /**
+     * Test what happens when a valid list of countries is passed into the printCities method
+     */
+    @Test
+    void printCitiesTest() {
+        ArrayList<City> cities = new ArrayList<>();
+
+        // Add countries to the list
+        City city1 = new City();
+        city1.id = 5;
+        city1.name = "Amsterdam";
+        city1.countryCode = "NLD";
+        city1.district = "Noord-Holland";
+        city1.population = 731200;
+
+        City city2 = new City();
+        city2.id = 1;
+        city2.name = "Kabul";
+        city2.countryCode = "AFG";
+        city2.district = "Kabol";
+        city2.population = 1780000;
+
+        cities.add(city1);
+        cities.add(city2);
+
+        // Call the method with a valid list
+        app.printCities(cities);
     }
 }
