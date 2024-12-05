@@ -7,7 +7,7 @@ Project on Zube.io: https://zube.io/napier-394/population-info-organisation/w/wo
 * Release [![Releases](https://img.shields.io/github/release/amymilar/SEMcoursework/all.svg?style=flat-square)](https://github.com/amymillar/SEMcoursework/releases)
 * License [![LICENSE](https://img.shields.io/github/license/amymillar/SEMcoursework.svg?style=flat-square)](https://github.com/amymillar/SEMcoursework/blob/main/LICENSE)
 
-3 requirements of 32 have been implemented which is 9.4%
+8 requirements of 32 have been implemented which is 25%
 
 ### Reports
 
