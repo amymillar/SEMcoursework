@@ -10,17 +10,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 /**
  * Class for unit tests on App
  */
-public class AppTest
-
-{
+public class AppTest {
     static App app;
 
     /**
      * Create initial construction work to manage tests
      */
     @BeforeAll
-    static void init()
-    {
+    static void init() {
         app = new App();
     }
 
@@ -28,8 +25,7 @@ public class AppTest
      * Test what happens when null is passed into the printCountriesByPopulation method
      */
     @Test
-    void printCountriesTestNull()
-    {
+    void printCountriesTestNull() {
         app.printCountries(null);
     }
 
@@ -37,8 +33,7 @@ public class AppTest
      * Test what happens when an empty list is passed into the printCountriesByPopulation method
      */
     @Test
-    void printCountriesTestEmpty()
-    {
+    void printCountriesTestEmpty() {
         ArrayList<Country> countries = new ArrayList<>();
         app.printCountries(countries);
     }
@@ -47,8 +42,7 @@ public class AppTest
      * Test what happens when a list containing a null value is passed into the printCountriesByPopulation method
      */
     @Test
-    void printCountriesTestContainsNull()
-    {
+    void printCountriesTestContainsNull() {
         ArrayList<Country> countries = new ArrayList<>();
         countries.add(null);
         app.printCountries(countries);
@@ -58,8 +52,7 @@ public class AppTest
      * Test what happens when a valid list of countries is passed into the printCountriesByPopulation method
      */
     @Test
-    void printCountriesTest()
-    {
+    void printCountriesTest() {
         ArrayList<Country> countries = new ArrayList<>();
 
         // Add countries to the list

@@ -34,6 +34,7 @@ public class AppIntegrationTest
         ArrayList<Country> countries = app.getAllCountries();
         // Check the list of countries is not null or empty
         assertNotNull(countries);
+        assertFalse(countries.isEmpty());
     }
 
     /**
@@ -45,6 +46,7 @@ public class AppIntegrationTest
         ArrayList<Country> countries = app.getCountriesByContinent("Asia");
         // Check the list of countries is not null or empty
         assertNotNull(countries);
+        assertFalse(countries.isEmpty());
     }
 
     /**
@@ -56,5 +58,6 @@ public class AppIntegrationTest
         ArrayList<Country> countries = app.getCountriesByRegion("Europe");
         // Check the list of countries is not null or empty
         assertNotNull(countries);
+        assertFalse(countries.isEmpty());
     }
-}
+}}
