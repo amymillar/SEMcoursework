@@ -1,4 +1,4 @@
-package com.napier.semCoursework;
+package com.napier.SEMcoursework;
 
 /**
  * Country class
