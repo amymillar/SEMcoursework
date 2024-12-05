@@ -3,8 +3,7 @@ on:
   push:
     branches:
       - main
-      - develop
-      - feature/integration-testing
+
 jobs:
   UnitTests:
     name: Unit Tests
