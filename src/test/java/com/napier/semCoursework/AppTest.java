@@ -1,8 +1,5 @@
 package com.napier.semCoursework;
 
-import com.napier.SEMcoursework.App;
-import com.napier.SEMcoursework.Country;
-import com.napier.SEMcoursework.City;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
