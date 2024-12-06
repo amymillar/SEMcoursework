@@ -26,9 +26,9 @@ public class App {
         a.printCountries(europeCountries);
 
         // Get all countries in Western Europe and display them ordered by population
-        ArrayList<Country> westEuropeCountries = a.getCountriesByRegion("Western Europe");
-        System.out.println("COUNTRIES IN WESTERN EUROPE:");
-        a.printCountries(westEuropeCountries);
+        ArrayList<Country> westAfricaCountries = a.getCountriesByRegion("Western Africa");
+        System.out.println("COUNTRIES IN WESTERN AFRICA:");
+        a.printCountries(westAfricaCountries);
 
         // Get all cities in the world and display them ordered by population
         ArrayList<City> cities = a.getAllCities();
@@ -225,7 +225,7 @@ public class App {
 
             // Check each row in result set
             while (rset.next()) {
-                // Create new country object and set its name and population
+                // Create new city object and set its name and population
                 Country country = new Country();
                 country.name = rset.getString("name");
                 country.population = rset.getInt("population");
