@@ -3,7 +3,7 @@
 * Main Build Status ![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/amymillar/SEMcoursework/main.yml?branch=main)
 * Develop Build Status ![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/amymillar/SEMcoursework/main.yml?branch=develop)
 * Main Code coverage of tests [![codecov](https://codecov.io/gh/amymillar/SEMcoursework/branch/main/graph/badge.svg?token=HOUORAWU01)](https://codecov.io/gh/amymillar/SEMcoursework)
-* Release [![Releases](https://img.shields.io/github/release/amymilar/SEMcoursework/all.svg?style=flat-square)](https://github.com/amymillar/SEMcoursework/releases)
+* Release [![Releases](https://img.shields.io/github/release/amymillar/SEMcoursework/all.svg?style=flat-square)](https://github.com/amymillar/SEMcoursework/releases)
 * License [![LICENSE](https://img.shields.io/github/license/amymillar/SEMcoursework.svg?style=flat-square)](https://github.com/amymillar/SEMcoursework/blob/main/LICENSE)
 
 8 requirements of 32 have been implemented which is 25%
