@@ -81,3 +81,6 @@ jobs:
         with:
           branch: reports
           folder: reports
+          clean: true
+          commit-message: "Deploying reports"
+          force: true
