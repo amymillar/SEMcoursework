@@ -13,8 +13,8 @@ Project on Zube.io: https://zube.io/napier-394/population-info-organisation/w/wo
 
 | ID  |                                                                    Name                                                                     | Met | Screenshot |
 |-----|:-------------------------------------------------------------------------------------------------------------------------------------------:|----:|-----------:|
-| 1   |                                 All the countries in the world organised by largest population to smallest                                  | Yes |            |
-| 2   |                                All the countries in a continent organised by largest population to smallest                                 | Yes |            |
+| 1   |                                 All the countries in the world organised by largest population to smallest                                  | Yes |      ![Screenshot 2024-12-05 at 14.18.13.png](../../../../Desktop/Screenshot%202024-12-05%20at%2014.18.13.png)      |
+| 2   |                                All the countries in a continent organised by largest population to smallest                                 | Yes |        ![Screenshot 2024-12-05 at 15.35.26.png](../../../../Desktop/Screenshot%202024-12-05%20at%2015.35.26.png)    |
 | 3   |                                  All the countries in a region organised by largest population to smallest                                  | Yes |            |
 | 4   |                                 The top N populated countries in the world where N is provided by the user                                  |  No |            |
 | 5   |                                The top N populated countries in a continent where N is provided by the user                                 |  No |            |
