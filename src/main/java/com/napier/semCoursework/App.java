@@ -3,6 +3,10 @@ package com.napier.semCoursework;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.io.File;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class App {
     public static void main(String[] args) {
@@ -18,45 +22,53 @@ public class App {
         // Get all countries in the world and display them ordered by population
         ArrayList<Country> countries = a.getAllCountries();
         System.out.println("ALL THE COUNTRIES IN THE WORLD:");
-        a.printCountries(countries);
+        a.printCountries(countries, Countries.md);
 
         // Get all the countries in europe and display them ordered by population
         ArrayList<Country> europeCountries = a.getCountriesByContinent("Europe");
         System.out.println("COUNTRIES IN EUROPE:");
-        a.printCountries(europeCountries);
+        a.printCountries(europeCountries, Countries.md);
 
         // Get all countries in Western Europe and display them ordered by population
         ArrayList<Country> westEuropeCountries = a.getCountriesByRegion("Western Europe");
         System.out.println("COUNTRIES IN WESTERN EUROPE:");
-        a.printCountries(westEuropeCountries);
+        a.printCountries(westEuropeCountries, Countries.md);
 
         // Get all cities in the world and display them ordered by population
         ArrayList<City> cities = a.getAllCities();
         System.out.println("ALL THE CITIES IN THE WORLD:");
-        a.printCities(cities);
+        a.printCities(cities, Cities.md);
 
         // Get all cities in Asia and display them ordered by population
         ArrayList<City> asianCities = a.getCitiesByContinent("Asia");
         System.out.println("CITIES IN ASIA:");
-        a.printCities(asianCities);
+        a.printCities(asianCities, Cities.md);
 
         // Get all cities in the Middle East and display them ordered by population
         ArrayList<City> middleEastCities = a.getCitiesByRegion("Middle East");
         System.out.println("CITIES IN MIDDLE EAST:");
-        a.printCities(middleEastCities);
+        a.printCities(middleEastCities, Cities.md);
 
         // Get all cities in Georgia and display them ordered by population
         ArrayList<City> georgiaCities = a.getCitiesByCountry("GEO");
         System.out.println("CITIES IN GEORGIA:");
-        a.printCities(georgiaCities);
+        a.printCities(georgiaCities, Cities.md);
 
         // Get all cities in São Paulo and display them ordered by population
         ArrayList<City> pauloCities = a.getCitiesByDistrict("São Paulo");
         System.out.println("CITIES IN THE SAU PAULO DISTRICT:");
-        a.printCities(pauloCities);
+        a.printCities(pauloCities, Cities.md);
 
         // Disconnect from database
         a.disconnect();
+    }
+
+    public class Countries {
+        public static final String md = "countries.md";
+    }
+
+    public class Cities {
+        public static final String md = "cities.md";
     }
 
     /**
@@ -448,48 +460,75 @@ public class App {
         return cities;
     }
 
-
     /**
-     * Prints the list of countries and their populations.
+     * Outputs to Markdown
+     *
+     * @param countries
      */
-    public void printCountries(List<Country> countries) {
-        // Check countries is not null
+    public void printCountries(ArrayList<Country> countries, String filename) {
+        // Check employees is not null
         if (countries == null) {
-            System.out.println("No countries found");
+            System.out.println("No countries");
             return;
         }
 
-        // Loop over all the countries in the list
+        StringBuilder sb = new StringBuilder();
+        // Print header
+        sb.append("| Code | Name | Continent | Region | Population |                    Manager |\r\n");
+        sb.append("| --- | --- | --- | --- | --- | \r\n");
+        // Loop over all employees in the list
         for (Country country : countries) {
-            // Check if a country is null and skip if it is
-            if (country == null)
-                continue;
-            // Print out country name and its population
-            System.out.println(
-                    "Name:" + country.name + "\n"
-                            + "Population:" + country.population);
+            if (country == null) continue;
+            sb.append("| " + country.code + " | " +
+                    country.name + " | " + country.continent + " | " +
+                    country.region + " | " + country.population + " | \r\n");
+        }
+        try {
+            // Create directory if it doesn't exist
+            new File("./reports/").mkdirs();
+
+            // Create the file and write to it
+            BufferedWriter writer = new BufferedWriter(new FileWriter(new File("./reports/" + filename)));
+            writer.write(sb.toString());
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
     /**
-     * Prints the list of cities and their populations.
+     * Outputs to Markdown
+     *
+     * @param cities
      */
-    public void printCities(List<City> cities) {
-        // Check cities is not null
+    public void printCities(ArrayList<City> cities, String filename) {
+        // Check employees is not null
         if (cities == null) {
-            System.out.println("No countries found");
+            System.out.println("No cities");
             return;
         }
 
-        // Loop over all the city in the list
+        StringBuilder sb = new StringBuilder();
+        // Print header
+        sb.append("| Id | Name | CountryCode | District | Population |                    Manager |\r\n");
+        sb.append("| --- | --- | --- | --- | --- | \r\n");
+        // Loop over all employees in the list
         for (City city : cities) {
-            // Check if a city is null and skip if it is
-            if (city == null)
-                continue;
-            // Print out city name and its population
-            System.out.println(
-                    "Name:" + city.name + "\n"
-                            + "Population:" + city.population);
+            if (city == null) continue;
+            sb.append("| " + city.id + " | " +
+                    city.name + " | " + city.countryCode + " | " +
+                    city.district + " | " + city.population + " | \r\n");
+        }
+        try {
+            // Create directory if it doesn't exist
+            new File("./reports/").mkdirs();
+
+            // Create the file and write to it
+            BufferedWriter writer = new BufferedWriter(new FileWriter(new File("./reports/" + filename)));
+            writer.write(sb.toString());
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
