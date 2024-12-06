@@ -1,6 +1,5 @@
 # Software Engineering Methods Coursework
 
-Project on Zube.io: https://zube.io/napier-394/population-info-organisation/w/workspace-1/sprintboard?where%5Bsprint_id%5D=59438
 * Main Build Status ![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/amymillar/SEMcoursework/main.yml?branch=main)
 * Develop Build Status ![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/amymillar/SEMcoursework/main.yml?branch=develop)
 * Main Code coverage of tests [![codecov](https://codecov.io/gh/amymillar/SEMcoursework/branch/main/graph/badge.svg?token=HOUORAWU01)](https://codecov.io/gh/amymillar/SEMcoursework)
